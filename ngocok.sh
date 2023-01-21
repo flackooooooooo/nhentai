@@ -1,0 +1,1 @@
+read -p "ID : " id;mkdir $id;cd $_;xargs -n1 -I{} sh -c 'curl --progress-bar -O -H "Origin: rincans.io" "https://cors-anywhere.herokuapp.com/{}"' <<< `curl -s -H "Origin: rincans.io" "https://cors-anywhere.herokuapp.com/https://nhentai.net/g/$id/" | grep -Po 'data-src="\K[^"]+' | grep -v thumb`
